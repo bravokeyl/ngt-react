@@ -13,6 +13,8 @@
   "author": "bravokeyl",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.15.2",
+    "lodash": "^4.16.4",
     "material-ui": "^0.16.1",
     "react": "^15.3.2",
     "react-click-outside": "^2.2.0",

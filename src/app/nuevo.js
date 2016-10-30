@@ -6,17 +6,23 @@ import {render} from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import routes from './routes';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import NuevoHeader from './components/header';
-import NuevoSidebar from './components/left-sidebar';
+
 
 injectTapEventPlugin();
 
-const App = () => (
-  <MuiThemeProvider>
-    <NuevoHeader />
-    <NuevoSidebar />
-  </MuiThemeProvider>
-);
+// class App extends React.Component {
+//   constructor(props){
+//     super(props);
+//   }
+//   render(){
+//       return(
+//         <MuiThemeProvider>
+//           <NuevoHeader isSuperAdmin="true" />
+//           <NuevoSidebar />
+//         </MuiThemeProvider>
+//     );
+//   }
+// }
 
 render(
   <Router history={browserHistory} routes={routes} />,

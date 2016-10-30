@@ -25,7 +25,7 @@ class Nuevo extends React.Component {
   render() {
     return (
       <div className="nuevo-container">
-        <NuevoHeader isSidebarOpen={this.state.isSidebarOpen} />
+        <NuevoHeader isSuperAdmin isSidebarOpen={this.state.isSidebarOpen} />
         <NuevoSidebar />
         <div id="nuevo-body" className="nuevo-body">
             {this.props.children}

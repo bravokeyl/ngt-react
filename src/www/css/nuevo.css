@@ -101,8 +101,11 @@ img {
   z-index: 1;
   background: url('down.png') no-repeat right 15px top 28px;
   position: absolute;
-  left: 95px;
+  left: 298px;
   height: 60px;
+}
+.nuevo-client-nav {
+  left: 95px;
 }
 .nuevo-site-nav-item {
   margin: 15px 0;
