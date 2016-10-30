@@ -1,38 +1,68 @@
-[{
-    id: "azp",
-    name: "Azure Power",
-    sites: ["AZP - 1", "AZP - 2", "AZP - 3"]
-
-}, {
-    id: "tps",
-    name: "Tata Power",
-    sites: ["TPS - 1", "TPS - 2"]
-}, {
-    id: "lnc",
-    name: "Lanco",
-    sites: ["LNC - 1"]
-}, {
-    id: "jwt",
-    name: "Juwi Torrent",
-    sites: ["JWT - 1"]
-}, {
-    id: "vks",
-    name: "Vikram Solar",
-    sites: ["VKS - 1"]
-}, {
-    id: "acme",
-    name: "Acme",
-    sites: ["AME - 1"]
-}, {
-    id: "stw",
-    name: "Sterling Wilson",
-    sites: ["STW - 1"]
-}, {
-    id: "srd",
-    name: "Solairedirect",
-    sites: ["SRD - 1"]
-}, {
-    id: "pms",
-    name: "Premier Solar",
-    sites: ["PMS - 1"]
-}]
+[
+    {
+        "id":"azp",
+        "name":"Azure Power",
+        "sites":[
+            "AZP - 1",
+            "AZP - 2",
+            "AZP - 3"
+        ]
+    },
+    {
+        "id":"tps",
+        "name":"Tata Power",
+        "sites":[
+            "TPS - 1",
+            "TPS - 2"
+        ]
+    },
+    {
+        "id":"lnc",
+        "name":"Lanco",
+        "sites":[
+            "LNC - 1"
+        ]
+    },
+    {
+        "id":"jwt",
+        "name":"Juwi Torrent",
+        "sites":[
+            "JWT - 1"
+        ]
+    },
+    {
+        "id":"vks",
+        "name":"Vikram Solar",
+        "sites":[
+            "VKS - 1"
+        ]
+    },
+    {
+        "id":"acme",
+        "name":"Acme",
+        "sites":[
+            "AME - 1"
+        ]
+    },
+    {
+        "id":"stw",
+        "name":"Sterling Wilson",
+        "sites":[
+            "STW - 1"
+        ]
+    },
+    {
+        "id":"srd",
+        "name":"Solairedirect",
+        "sites":[
+            "SRD - 1"
+        ]
+    },
+    {
+        "id":"pms",
+        "name":"Premier Solar",
+        "sites":[
+            "PMS - 1"
+        ]
+    }
+]

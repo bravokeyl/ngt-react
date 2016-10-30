@@ -11,31 +11,29 @@ class NuevoSiteSelector extends React.Component {
     this.state = {
       clients: []
     };
-    console.log(this.state.clients,"Constructor");
+    // console.log(this.state.clients,"Constructor");
   }
 
   componentWillMount() {
-    console.log(this.state.clients,"Component Will Mount");
+    // console.log(this.state.clients,"Component Will Mount");
   }
 
   componentDidMount() {
     let url = "http://nuevosol.solar:5007/clients.json";
     axios.get(url)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         this.setState({ clients: res.data });
       });
-      console.log(this.state.clients,"Component Mounted");
+      // console.log(this.state.clients,"Component Mounted");
   }
 
   render() {
     let clientsObject = [];
     return (
-      <NuevoSiteSelectorP clients={[this.state.clients]}/>
+      <NuevoSiteSelectorP clients={this.state.clients}/>
     );
   }
 }
-
-
 
 export default NuevoSiteSelector;

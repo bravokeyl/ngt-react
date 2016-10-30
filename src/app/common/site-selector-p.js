@@ -1,3 +1,4 @@
+/*eslint-disable no-console*/
 'use strict';
 
 import React from 'react';
@@ -10,11 +11,13 @@ class NuevoSiteSelectorP extends React.Component {
   render() {
     let clientsObject = [];
     this.props.clients.forEach(function(e,i){
-      clientsObject.push(<a href="javascript:;"  className="nuevo-site-nav-item clearfix">
-        <p key={e.id}>
-        {e.name}
-        </p>
-      </a>);
+       clientsObject.push(
+         <a href="#" key={e.id} className="nuevo-site-nav-item">
+          <p>
+            {e.name}
+          </p>
+        </a>
+      );
     });
     return (
       <div>
