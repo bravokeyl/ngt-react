@@ -139,6 +139,8 @@ img {
     background-color: #ebeff1;
 }
 .nuevo-site-nav-items-dropdown .nuevo-site-nav-item {
+  color: #4c5766;
+  font-size: 18px;
   padding: 10px 15px 10px 15px;
   margin: 0;
   display: block;
@@ -146,10 +148,10 @@ img {
   clear: both;
   overflow: hidden;
 }
-.nuevo-site-nav-items-dropdown p {
+/*.nuevo-site-nav-items-dropdown p {
     color: #4c5766;
     font-size: 18px;
-}
+}*/
 .nuevo-site-nav:hover .nuevo-site-nav-items-dropdown {
   display: block;
 }

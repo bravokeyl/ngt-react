@@ -3,65 +3,50 @@
 
 import React from 'react';
 
-class NuevoSiteSelectorP extends React.Component {
+class NuevoclientSelectorP extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      selectedClient: this.props.clientSelected
+    };
+    this.clientSelect = this.clientSelect.bind(this);
+  }
+
+  clientSelect(e){
+    this.setState({selectedClient: e.target.text});
+    this.props.updateSites(e.target.text);
   }
 
   render() {
+    console.log("Rendering Client Component", this.state,"Props",this.props);
     let clientsObject = [];
+    let self = this;
     this.props.clients.forEach(function(e,i){
        clientsObject.push(
-         <a href="#" key={e.id} className="nuevo-site-nav-item">
-          <p>
-            {e.name}
-          </p>
+         <a href="javascript:;" key={e.id} className="nuevo-site-nav-item" onClick={self.clientSelect} >
+           {e.name}
         </a>
       );
     });
     return (
-      <div>
-        <div className="nuevo-site-nav nuevo-client-nav">
+      <div className="nuevo-site-nav nuevo-client-nav">
           <a href="javascript:;" className="nuevo-site-nav-item clearfix">
             <p>
-              Azure Power
+              {this.state.selectedClient}
             </p>
           </a>
           <div className="nuevo-site-nav-items-dropdown">
             {clientsObject}
           </div>
         </div>
-        <div className="nuevo-site-nav">
-          <a href="javascript:;" className="nuevo-site-nav-item clearfix">
-            <p>
-              Azure Power <strong>1</strong>
-            </p>
-          </a>
-          <div className="nuevo-site-nav-items-dropdown">
-            <a href="#" className="nuevo-site-nav-item clearfix">
-              <p>
-                Azure Power <strong>1</strong>
-              </p>
-            </a>
-            <a href="#" className="nuevo-site-nav-item clearfix">
-              <p>
-                Azure Power <strong>2</strong>
-              </p>
-            </a>
-            <a href="#" className="nuevo-site-nav-item clearfix">
-              <p>
-                Azure Power <strong>3</strong>
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
     );
   }
 }
 
-NuevoSiteSelectorP.propTypes = {
-  clients: React.PropTypes.array.isRequired
+NuevoclientSelectorP.propTypes = {
+  clients: React.PropTypes.array.isRequired,
+  clientSelected: React.PropTypes.string,
+  updateSites: React.PropTypes.func
 };
 
-export default NuevoSiteSelectorP;
+export default NuevoclientSelectorP;
