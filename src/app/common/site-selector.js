@@ -12,7 +12,7 @@ class NuevoSiteSelector extends React.Component {
     super(props);
     this.state = {
       clientSelected: "Azure Power",
-      siteSelected: "AZP-1",
+      siteSelected: "AZP - 1",
       clients: [],
       sites: []
     };
