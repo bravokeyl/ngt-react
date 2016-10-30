@@ -19,7 +19,7 @@ class NuevoClientSitesSelectorP extends React.Component {
   }
 
   render() {
-    // console.log("Rendering Site Component", this.state,"Props",this.props);
+    console.log("Rendering Site Component", this.state,"Props",this.props);
     let sitesObject = [];
     let self = this;
     this.props.sites.forEach(function(e,i){

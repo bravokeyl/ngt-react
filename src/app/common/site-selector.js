@@ -14,7 +14,7 @@ class NuevoSiteSelector extends React.Component {
       clientSelected: JSON.parse(localStorage.getItem('selectedClient')) || "Azure Power",
       siteSelected: JSON.parse(localStorage.getItem('selectedSite')) || "AZP - 1",
       clients: [],
-      sites: []
+      sites: JSON.parse(localStorage.getItem('sites')) || []
     };
     this.updateSites = this.updateSites.bind(this);
     this.updateSite = this.updateSite.bind(this);
@@ -22,24 +22,24 @@ class NuevoSiteSelector extends React.Component {
 
   componentDidMount() {
     this.fetchClients();
-    console.log("selector component did mount");
+    localStorage.setItem('sites', JSON.stringify(this.state.sites));
   }
 
-  componentWillUnmount() {
-    console.info("selector component Unmount");
-  }
+
 
   fetchClients(){
     let url = "http://nuevosol.solar:5007/clients.json";
     return axios.get(url)
       .then((res) => {
-        this.setState({ clients: res.data, sites: res.data[0].sites });
+        this.setState({ clients: res.data, sites: JSON.parse(localStorage.getItem('sites')) });
       });
   }
 
   updateSites(e) {
     let sitesSelected = this.getSiteByName(e);
     this.setState({ clientSelected: e,sites: sitesSelected, siteSelected: sitesSelected[0] });
+    localStorage.setItem('sites', JSON.stringify(sitesSelected));
+    localStorage.setItem('selectedSite', JSON.stringify(sitesSelected[0]));
   }
 
   updateSite(e) {
@@ -57,7 +57,7 @@ class NuevoSiteSelector extends React.Component {
   }
   render() {
     let clientsObject = [];
-    // console.log("Rendering Selector Component", this.state);
+    console.log("Rendering Selector Component", this.state);
     return (
       <div>
         <NuevoSiteSelectorP clients={this.state.clients} clientSelected={this.state.clientSelected}
