@@ -17,6 +17,7 @@ class NuevoSiteSelector extends React.Component {
       sites: []
     };
     this.updateSites = this.updateSites.bind(this);
+    this.updateSite = this.updateSite.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +37,10 @@ class NuevoSiteSelector extends React.Component {
     this.setState({ clientSelected: e,sites: sitesSelected, siteSelected: sitesSelected[0] });
   }
 
+  updateSite(e) {
+    this.setState({ siteSelected: e });
+  }
+
   getSiteByName(name) {
     let sites = [];
     this.state.clients.forEach(function(e,i){
@@ -50,9 +55,10 @@ class NuevoSiteSelector extends React.Component {
     console.log("Rendering Selector Component", this.state);
     return (
       <div>
-        <NuevoSiteSelectorP clientSelected={this.state.clientSelected} clients={this.state.clients}
+        <NuevoSiteSelectorP clients={this.state.clients} clientSelected={this.state.clientSelected}
           updateSites={this.updateSites}/>
-        <NuevoClientSitesSelectorP sites={this.state.sites} siteSelected={this.state.siteSelected}/>
+        <NuevoClientSitesSelectorP sites={this.state.sites} siteSelected={this.state.siteSelected}
+          updateSite={this.updateSite} />
       </div>
     );
   }

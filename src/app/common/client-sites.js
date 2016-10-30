@@ -7,20 +7,18 @@ class NuevoClientSitesSelectorP extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedSite: this.props.siteSelected
+      siteSelected: this.props.siteSelected
     };
     this.siteSelect = this.siteSelect.bind(this);
   }
-  componentDidMount() {
-    console.log("Component Did Update",this.props.siteSelected,this.state.siteSelected);
-    this.updateSite();
-  }
-  updateSite() {
-    this.setState({selectedSite: this.props.siteSelected});
-  }
+
+  // updateSite() {
+  //   this.setState({siteSelected: this.props.siteSelected});
+  // }
   siteSelect(e){
     console.log("Selected Site",e.target.text,this.props.siteSelected);
-    this.setState({selectedSite: e.target.text});
+    this.props.updateSite(e.target.text);
+    this.setState({siteSelected: e.target.text});
   }
 
   render() {
@@ -52,7 +50,8 @@ class NuevoClientSitesSelectorP extends React.Component {
 
 NuevoClientSitesSelectorP.propTypes = {
   sites: React.PropTypes.array.isRequired,
-  siteSelected: React.PropTypes.string
+  siteSelected: React.PropTypes.string,
+  updateSite: React.PropTypes.func
 };
 
 export default NuevoClientSitesSelectorP;
