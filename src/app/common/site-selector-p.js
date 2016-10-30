@@ -15,10 +15,11 @@ class NuevoclientSelectorP extends React.Component {
   clientSelect(e){
     this.setState({selectedClient: e.target.text});
     this.props.updateSites(e.target.text);
+    localStorage.setItem('selectedClient', JSON.stringify(e.target.text));
   }
 
   render() {
-    console.log("Rendering Client Component", this.state,"Props",this.props);
+    // console.log("Rendering Client Component", this.state,"Props",this.props);
     let clientsObject = [];
     let self = this;
     this.props.clients.forEach(function(e,i){

@@ -12,20 +12,16 @@ class NuevoClientSitesSelectorP extends React.Component {
     this.siteSelect = this.siteSelect.bind(this);
   }
 
-  // updateSite() {
-  //   this.setState({siteSelected: this.props.siteSelected});
-  // }
   siteSelect(e){
-    console.log("Selected Site",e.target.text,this.props.siteSelected);
     this.props.updateSite(e.target.text);
     this.setState({siteSelected: e.target.text});
+    localStorage.setItem('selectedSite', JSON.stringify(e.target.text));
   }
 
   render() {
-    console.log("Rendering Site Component", this.state,"Props",this.props);
+    // console.log("Rendering Site Component", this.state,"Props",this.props);
     let sitesObject = [];
     let self = this;
-    // this.setState({selectedSite: this.props.siteSelected});
     this.props.sites.forEach(function(e,i){
        sitesObject.push(
          <a href="#" key={i} className="nuevo-site-nav-item" onClick={self.siteSelect}>

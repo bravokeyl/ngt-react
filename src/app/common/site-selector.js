@@ -11,8 +11,8 @@ class NuevoSiteSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clientSelected: "Azure Power",
-      siteSelected: "AZP - 1",
+      clientSelected: JSON.parse(localStorage.getItem('selectedClient')) || "Azure Power",
+      siteSelected: JSON.parse(localStorage.getItem('selectedSite')) || "AZP - 1",
       clients: [],
       sites: []
     };
@@ -22,6 +22,11 @@ class NuevoSiteSelector extends React.Component {
 
   componentDidMount() {
     this.fetchClients();
+    console.log("selector component did mount");
+  }
+
+  componentWillUnmount() {
+    console.info("selector component Unmount");
   }
 
   fetchClients(){
@@ -52,7 +57,7 @@ class NuevoSiteSelector extends React.Component {
   }
   render() {
     let clientsObject = [];
-    console.log("Rendering Selector Component", this.state);
+    // console.log("Rendering Selector Component", this.state);
     return (
       <div>
         <NuevoSiteSelectorP clients={this.state.clients} clientSelected={this.state.clientSelected}

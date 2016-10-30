@@ -16,14 +16,16 @@
         "name":"Tata Power",
         "sites":[
             "TPS - 1",
-            "TPS - 2"
+            "TPS - 2",
+            "TPS - 3"
         ]
     },
     {
         "id":"lnc",
         "name":"Lanco",
         "sites":[
-            "LNC - 1"
+            "LNC - 1",
+            "LNC - 2"
         ]
     },
     {
@@ -58,7 +60,8 @@
         "id":"srd",
         "name":"Solairedirect",
         "sites":[
-            "SRD - 1"
+            "SRD - 1",
+            "SRD - 2"
         ]
     },
     {
