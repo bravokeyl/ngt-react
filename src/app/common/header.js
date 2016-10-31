@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import NuevoLogo from './header-logo';
 import NuevoSiteSelector from './site-selector';

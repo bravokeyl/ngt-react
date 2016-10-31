@@ -1,6 +1,4 @@
 /*eslint-disable no-console*/
-'use strict';
-
 import React from 'react';
 import axios from 'axios';
 import NuevoSiteSelectorP from './site-selector-p';
