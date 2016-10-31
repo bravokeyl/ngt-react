@@ -8,6 +8,10 @@ import NuevoActivity from './common/activity';
 
 /* Pages */
 import NuevoDashboard from './routes/dashboard';
+import NuevoHome from './routes/home';
+import NuevoCollections from './routes/c';
+import NuevoDownloads from './routes/d';
+import NuevoLogs from './routes/l';
 
 class Nuevo extends React.Component {
   constructor(props) {
@@ -28,9 +32,11 @@ class Nuevo extends React.Component {
         <NuevoHeader isSuperAdmin isSidebarOpen={this.state.isSidebarOpen} />
         <NuevoSidebar />
         <div id="nuevo-body" className="nuevo-body">
-            {this.props.children}
+            <div className="content">
+              {this.props.children}
+            </div>
         </div>
-        <NuevoActivity />
+
       </div>
     );
   }
@@ -43,6 +49,10 @@ Nuevo.propTypes = {
 const routes = (
   <Route path="/" component={Nuevo}>
     <IndexRoute component={NuevoDashboard} />
+    <Route path="h" component={NuevoHome}/>
+    <Route path="c" component={NuevoCollections}/>
+    <Route path="d" component={NuevoDownloads}/>
+    <Route path="l" component={NuevoLogs}/>
   </Route>
 );
 

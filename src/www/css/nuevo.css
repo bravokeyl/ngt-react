@@ -9,11 +9,13 @@ button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-bloc
     display: table;
 }
 
-body,
-.nuevo-app {
-  background: #fafafa;
+body {
+  position: relative;
+  background: #ebeff1;
+  height: 100%;
   min-height: 100%;
   min-height: 100vh;
+  padding-top: 100px;
 }
 body, h1, h2, h3, h4 {
   font-family: Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -40,8 +42,10 @@ img {
 }
 .nuevo-body,
 .nuevo-activity {
-  margin-left: 92px;
-  display: none;
+  padding-left: 200px;
+  position: relative;
+  clear: both;
+  overflow: hidden;
 }
 .nuevo-nav {
   text-align: center;
@@ -368,4 +372,11 @@ img {
   font-weight: 400;
   display: block;
   text-decoration: none;
+}
+
+/* Content */
+.content {
+  margin: 0 auto;
+  padding: 50px 0;
+  max-width: 1060px;
 }

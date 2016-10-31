@@ -2,6 +2,7 @@
 'use strict';
 
 import React from 'react';
+import { Link } from 'react-router';
 
 class NuevoClientSitesSelectorP extends React.Component {
   constructor(props) {
@@ -24,9 +25,9 @@ class NuevoClientSitesSelectorP extends React.Component {
     let self = this;
     this.props.sites.forEach(function(e,i){
        sitesObject.push(
-         <a href="#" key={i} className="nuevo-site-nav-item" onClick={self.siteSelect}>
+         <Link to={e.toLowerCase()+"/"+i} key={i} className="nuevo-site-nav-item" onClick={self.siteSelect}>
          {e}
-         </a>
+         </Link>
       );
     });
     return (

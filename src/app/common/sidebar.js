@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-
+import { Router, Route, Link, IndexRoute } from 'react-router';
 
 class NuevoSidebar extends React.Component {
   constructor(props) {
@@ -21,24 +21,22 @@ class NuevoSidebar extends React.Component {
         <div className="menu">
           <ul className="menu__items">
             <li className="menu__item">
-              <a href="#">
-                  <i className="material-icons">home</i> <span>Home</span>
-              </a>
+              <Link to="/h"><i className="material-icons">home</i> <span>Home</span></Link>
             </li>
             <li className="menu__item">
-              <a href="#">
+              <Link to="/c">
                   <i className="material-icons">dashboard</i> <span>Collections</span>
-              </a>
+              </Link>
             </li>
             <li className="menu__item">
-              <a href="#">
+              <Link to="/d">
                   <i className="material-icons">file_download</i> <span>Downloads</span>
-              </a>
+              </Link>
             </li>
             <li className="menu__item">
-              <a href="#">
-                  <i className="material-icons">store</i> <span>Collections</span>
-              </a>
+              <Link to="/l">
+                  <i className="material-icons">store</i> <span>Logs</span>
+              </Link>
             </li>
         </ul>
         </div>
