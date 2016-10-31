@@ -36,7 +36,6 @@ class Nuevo extends React.Component {
               {this.props.children}
             </div>
         </div>
-
       </div>
     );
   }

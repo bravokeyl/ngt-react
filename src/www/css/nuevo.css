@@ -381,3 +381,120 @@ img {
   padding: 50px 0;
   max-width: 1060px;
 }
+
+.tracker-item {
+  position: relative;
+}
+.tr-container {
+  position: relative;
+  min-height: 150px;
+  width: 100%;
+  max-height: 600px;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+.tr-container img {
+    display: block;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.post-list-item .post__info--preview {
+    position: relative;
+    background: #fff;
+    z-index: 10;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease;
+    border-radius: 0 0 4px 4px;
+    top: 0;
+}
+/* Card */
+.card {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    margin: 10px 0;
+    border-radius: 4px;
+    display: block;
+    position: relative;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    background: #fff
+}
+
+@media (min-width:768px) {
+    .card:hover {
+        box-shadow: 0 10px 20px 0 rgba(168, 182, 191, .6)
+    }
+}
+
+.card__title {
+    margin: 0;
+    font-size: 16px;
+    display: block;
+    line-height: 22px;
+    padding-right: 5px;
+    font-weight: 500;
+    color: #3b4a51
+}
+
+.card__title:hover {
+    color: #3b4a51;
+    text-decoration: none
+}
+
+.card__footer {
+    position: relative;
+    min-height: 72px;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    padding: 15px
+}
+
+.card__footer p {
+    margin: 0;
+    padding: 0;
+    color: rgba(76, 87, 102, .5);
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 500
+}
+
+.card__footer p a {
+    text-transform: capitalize;
+    color: rgba(76, 87, 102, .5)
+}
+
+.card__footer p a:hover {
+    text-decoration: none
+}
+
+.card__footer img {
+    border-radius: 50%
+}
+
+@media (max-width:1060px) {
+    .card__footer .card__avatar {
+        display: none
+    }
+}
+
+.card__footer-link {
+    color: rgba(0, 0, 0, .87);
+    font-weight: 500
+}
+
+.card__avatar {
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
+    line-height: 1
+}
+/* Status */
+.status {
+  text-align: center;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
