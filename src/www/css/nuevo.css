@@ -305,6 +305,7 @@ img {
 .secondary-navbar__list-item:hover {
     text-decoration: none;
 }
+.secondary-navbar__list-item>a.active,
 .secondary-navbar__list-item.active>a,
 .secondary-navbar__list-item:focus>a,
 .secondary-navbar__list-item:hover>a {

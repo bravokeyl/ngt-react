@@ -6,7 +6,14 @@ class NuevoDashboard extends Component {
   }
   render() {
     return (
-      <div>Sidebar</div>
+      <div>
+        <b>
+          Client: {this.props.params.cid}<br/>
+          Site: {this.props.params.sid}<br/>
+          Query: {this.props.location.search}<br/>
+          Path: {this.props.location.pathname}<br/>
+        </b>
+      </div>
     );
   }
 }

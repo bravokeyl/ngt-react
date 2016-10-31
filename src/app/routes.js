@@ -49,8 +49,9 @@ Nuevo.propTypes = {
 const routes = (
   <Route path="/" component={Nuevo}>
     <IndexRoute component={NuevoDashboard} />
+    <Route path="/:cid/:sid" component={NuevoDashboard}/>
     <Route path="h" component={NuevoHome}/>
-    <Route path="c" component={NuevoCollections}/>
+    <Route path="s" component={NuevoCollections}/>
     <Route path="d" component={NuevoDownloads}/>
     <Route path="l" component={NuevoLogs}/>
   </Route>

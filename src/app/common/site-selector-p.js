@@ -2,6 +2,7 @@
 'use strict';
 
 import React from 'react';
+import { Link } from 'react-router';
 
 class NuevoclientSelectorP extends React.Component {
   constructor(props) {
@@ -23,10 +24,11 @@ class NuevoclientSelectorP extends React.Component {
     let clientsObject = [];
     let self = this;
     this.props.clients.forEach(function(e,i){
+      let path = "/"+e.id+"/1";
        clientsObject.push(
-         <a href="javascript:;" key={e.id} className="nuevo-site-nav-item" onClick={self.clientSelect} >
+         <Link to={{ pathname: path, query:{b:"n"} }} key={e.id} className="nuevo-site-nav-item" onClick={self.clientSelect} >
            {e.name}
-        </a>
+        </Link>
       );
     });
     return (

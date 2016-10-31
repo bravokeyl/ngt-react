@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import { Link } from 'react-router';
 import enhanceWithClickOutside  from 'react-click-outside';
 
 class NuevoSecondaryNav extends React.Component {
@@ -26,25 +27,25 @@ class NuevoSecondaryNav extends React.Component {
       <div className="secondary-navbar">
         <div className="secondary-navbar-inner">
           <ul className="secondary-navbar__list-items clearfix">
-            <li className="secondary-navbar__list-item navigation__dropdown active">
-              <a href="#">
+            <li className="secondary-navbar__list-item navigation__dropdown">
+              <Link to={location => ({ ...location, query: { b: 'n' } })} activeClassName="active">
                 North Block
-              </a>
+              </Link>
             </li>
             <li className="secondary-navbar__list-item navigation__dropdown">
-              <a href="#">
+              <Link to={location => ({ ...location, query: { b: 's' } })} activeClassName="active">
                 South Block
-              </a>
+              </Link>
             </li>
             <li className="secondary-navbar__list-item navigation__dropdown">
-              <a href="#">
+              <Link to={location => ({ ...location, query: { b: 'w' } })} activeClassName="active">
                 West Block
-              </a>
+              </Link>
             </li>
             <li className="secondary-navbar__list-item navigation__dropdown">
-              <a href="#">
+              <Link to={location => ({ ...location, query: { b: 'e' } })} activeClassName="active">
                 East Block
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

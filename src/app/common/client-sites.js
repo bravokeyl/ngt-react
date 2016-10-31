@@ -24,8 +24,10 @@ class NuevoClientSitesSelectorP extends React.Component {
     let sitesObject = [];
     let self = this;
     this.props.sites.forEach(function(e,i){
+      let path = "/"+(e.toLowerCase().split('-')[0]).trim()+"/"+parseInt(i+1);
        sitesObject.push(
-         <Link to={e.toLowerCase()+"/"+i} key={i} className="nuevo-site-nav-item" onClick={self.siteSelect}>
+         <Link to={{ pathname: path, query: { b: "n" } }} key={i}
+         className="nuevo-site-nav-item" onClick={self.siteSelect}>
          {e}
          </Link>
       );
