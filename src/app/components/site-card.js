@@ -18,7 +18,7 @@ class NuevoSiteCard extends React.Component {
               </a>
             </div>)}
             <div className="card-footer-wrapper">
-              <Link to={sid}>
+              <Link to={{pathname: sid, query: { b: 'all' }}}>
                 <div className="card__footer clearfix">
                 <div className="pull-right">
                   <div className="status">
