@@ -36,23 +36,41 @@ class NuevoDashboard extends Component {
       }
     ];
   }
+  selectBlock(block,cards){
+    switch(block){
+      case "n":
+          return(<div className="nb"><div>North</div>{cards}</div>);
+      case "s":
+          return(<div className="sb"><div>South</div>{cards}</div>);
+      case "w":
+          return(<div className="wb"><div>West</div>{cards}</div>);
+      case "e":
+          return(<div className="eb"><div>East</div>{cards}</div>);
+      default:
+          return(<div className="all"><div>Default Block</div>
+                  {cards}{cards}{cards}{cards}
+                </div>);
+    }
+  }
   render() {
     let cards = [];
     let cardsI = [];
     this.cards.map((i,k)=>{
-      console.log("cards",i);
       cards.push(<NuevoCard key={k} name={i.name} imageSrc={i.src}  noImage id={i.id} status={i.status}/>);
     });
+    let selectedBlock = "n";
+    selectedBlock = this.props.location.search.split("=");
+
     return (
       <div className="row">
-        {cards}
-        {cards}
-        {cards}
-        {cards}
-        {cards}
+        {this.selectBlock(selectedBlock[1],cards)}
       </div>
     );
   }
 }
+
+NuevoDashboard.propTypes = {
+  location: React.PropTypes.object.isRequired
+};
 
 export default NuevoDashboard;
