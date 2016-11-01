@@ -1,10 +1,20 @@
 /*eslint-disable no-console*/
 import React, { Component } from "react";
+/* Common Components */
+import NuevoSidebar from '../common/sidebar';
+import NuevoHeader from '../common/header';
+import NuevoActivity from '../common/activity';
+
 import NuevoCard from '../components/card';
 
 class NuevoDashboard extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      cards: [],
+      isSidebarOpen : true
+    };
+    this.toggleSidebar = this.toggleSidebar.bind(this);
     this.cards = [
       {
         "id": "ngt-azp-s1-b1-001",
@@ -36,6 +46,11 @@ class NuevoDashboard extends Component {
       }
     ];
   }
+  toggleSidebar(v) {
+    this.setState({
+      collapsed: v
+    });
+  }
   selectBlock(block,cards){
     switch(block){
       case "n":
@@ -62,9 +77,18 @@ class NuevoDashboard extends Component {
     selectedBlock = this.props.location.search.split("=");
 
     return (
-      <div className="row">
-        {this.selectBlock(selectedBlock[1],cards)}
+      <div>
+        <NuevoHeader isSuperAdmin isSidebarOpen={this.state.isSidebarOpen} />
+        <NuevoSidebar />
+        <div id="nuevo-body" className="nuevo-body">
+            <div className="content">
+              <div className="row">
+                {this.selectBlock(selectedBlock[1],cards)}
+              </div>
+            </div>
+        </div>
       </div>
+
     );
   }
 }

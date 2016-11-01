@@ -1,11 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-/* Common Components */
-import NuevoSidebar from './common/sidebar';
-import NuevoHeader from './common/header';
-import NuevoActivity from './common/activity';
-
 /* Pages */
 import NuevoDashboard from './routes/dashboard';
 import NuevoTrackerDetail from './routes/detail';
@@ -18,26 +13,11 @@ import NuevoLogs from './routes/l';
 class Nuevo extends React.Component {
   constructor(props) {
     super(props);
-    this.toggleSidebar = this.toggleSidebar.bind(this);
-    this.state = {
-      isSidebarOpen : true
-    };
-  }
-  toggleSidebar(v) {
-    this.setState({
-      collapsed: v
-    });
   }
   render() {
     return (
       <div className="nuevo-container">
-        <NuevoHeader isSuperAdmin isSidebarOpen={this.state.isSidebarOpen} />
-        <NuevoSidebar />
-        <div id="nuevo-body" className="nuevo-body">
-            <div className="content">
-              {this.props.children}
-            </div>
-        </div>
+        {this.props.children}
       </div>
     );
   }
