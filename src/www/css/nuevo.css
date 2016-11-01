@@ -74,6 +74,7 @@ img {
   border: none;
   -webkit-transition: background-color .15s ease;
   transition: background-color .15s ease;
+  background: linear-gradient(to right, #fd651a 0%,#fb6529 24%,#f3635c 76%,#f1636c 100%);
   background-color: #2856b6;
 }
 .nuevo-logo .hamburger {
@@ -358,9 +359,12 @@ img {
 }
 .menu__item {
   list-style: none;
-  padding: 0 0 0 30px;
   border-radius: 3px;
+  padding: 0px;
   margin: 0;
+}
+.menu__item a {
+  padding: 0 0 0 30px;
 }
 .menu__item i {
   margin-right: 30px;
@@ -378,6 +382,14 @@ img {
   font-weight: 400;
   display: block;
   text-decoration: none;
+}
+.menu__item a.active,
+.menu__item a.active i {
+  color: #3b4a51;
+  background-color: #e4e8eb;
+}
+.menu__item a.active span {
+  font-weight: 700;
 }
 
 /* Content */

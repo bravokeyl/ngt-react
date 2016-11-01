@@ -19,20 +19,20 @@ class NuevoSidebar extends React.Component {
         <div className="menu">
           <ul className="menu__items">
             <li className="menu__item">
-              <Link to="/"><i className="material-icons">home</i> <span>Home</span></Link>
+              <Link to="/" activeClassName="active"><i className="material-icons">home</i> <span>Home</span></Link>
             </li>
             <li className="menu__item">
-              <Link to="/c">
+              <Link to="/c" activeClassName="active">
                   <i className="material-icons">dashboard</i> <span>Collections</span>
               </Link>
             </li>
             <li className="menu__item">
-              <Link to="/d">
+              <Link to="/d" activeClassName="active">
                   <i className="material-icons">file_download</i> <span>Downloads</span>
               </Link>
             </li>
             <li className="menu__item">
-              <Link to="/l">
+              <Link to="/l" activeClassName="active">
                   <i className="material-icons">store</i> <span>Logs</span>
               </Link>
             </li>
