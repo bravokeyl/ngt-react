@@ -2,39 +2,37 @@ import React from "react";
 import {Link} from "react-router";
 import moment from "moment";
 
-class NuevoCard extends React.Component {
+class NuevoSiteCard extends React.Component {
   constructor(props){
     super(props);
   }
   render(){
-    let tid = " "+this.props.id;
+    let sid = this.props.site.id;
     return (
       <div className="col-md-3 col-sm-4 col-sm-6 col-xs-12">
         <div className="tracker-item">
           <div className="card">
-            { this.props.noImage ? "":(<div className="tr-container">
+            {this.props.noImage ? "":(<div className="tr-container">
               <a>
-                <img className="img-responsive" src={this.props.imageSrc} />
+                <img className="img-responsive" src={this.props.site.src} />
               </a>
             </div>)}
             <div className="card-footer-wrapper">
-              <Link to={ {pathname: tid} }>
+              <Link to={sid}>
                 <div className="card__footer clearfix">
                 <div className="pull-right">
                   <div className="status">
-                    <div>{this.props.status ? "Live":"Dead"}</div>
-                    <i className={"material-icons "+ (this.props.status ? "green":"red")}>
-                    {this.props.status ? "check_circle":"error"}
-                    </i>
+                    <div>Trackers</div>
+                    <p>1200</p>
                   </div>
                 </div>
 
                   <div className="card__title truncate">
-                  {this.props.name}
+                  {this.props.site.name}
                 </div>
 
                 <p className="truncate">
-                  {moment().subtract(3, 'm').fromNow()}
+                  {this.props.site.location}
                 </p>
               </div>
               </Link>
@@ -46,4 +44,9 @@ class NuevoCard extends React.Component {
   }
 }
 
-export default NuevoCard;
+NuevoSiteCard.propTypes = {
+  site: React.PropTypes.object.isRequired,
+  noImage: React.PropTypes.bool
+};
+
+export default NuevoSiteCard;

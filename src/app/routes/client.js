@@ -1,8 +1,9 @@
 /*eslint-disable no-console*/
 import React, { Component } from "react";
 import axios from "axios";
-import NuevoClientCard from '../components/client-card';
-class NuevoHome extends Component {
+import NuevoSiteCard from '../components/site-card';
+
+class NuevoClient extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -16,13 +17,19 @@ class NuevoHome extends Component {
     let url = "/clients.json";
     return axios.get(url)
       .then(({data}) => {
+        console.log(this.props.params.cid);
         this.setState({cards: data});
       });
   }
   render() {
     let cards = [];
+    let cid = this.props.params.cid;
     this.state.cards.map((client,k)=>{
-      cards.push(<NuevoClientCard key={client.id} client={client} />);
+      if(cid == client.id){
+        client.sites.map((i,k)=>{
+          cards.push(<NuevoSiteCard key={k} site={i} />);
+        });
+      }
     });
     return (
       <div className="row">
@@ -32,4 +39,8 @@ class NuevoHome extends Component {
   }
 }
 
-export default NuevoHome;
+NuevoClient.propTypes = {
+  params: React.PropTypes.object.isRequired
+};
+
+export default NuevoClient;

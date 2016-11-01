@@ -8,6 +8,8 @@ import NuevoActivity from './common/activity';
 
 /* Pages */
 import NuevoDashboard from './routes/dashboard';
+import NuevoTrackerDetail from './routes/detail';
+import NuevoClient from './routes/client';
 import NuevoHome from './routes/home';
 import NuevoCollections from './routes/c';
 import NuevoDownloads from './routes/d';
@@ -47,8 +49,10 @@ Nuevo.propTypes = {
 
 const routes = (
   <Route path="/" component={Nuevo}>
-    <IndexRoute component={NuevoDashboard} />
-    <Route path="/:cid/:sid" component={NuevoDashboard}/>
+    <IndexRoute component={NuevoHome} />
+    <Route path="/:cid" component={NuevoClient} />
+    <Route path="/:cid/:sid" component={NuevoDashboard} />
+    <Route path="t/:tid" component={NuevoTrackerDetail}/>
     <Route path="h" component={NuevoHome}/>
     <Route path="c" component={NuevoCollections}/>
     <Route path="d" component={NuevoDownloads}/>

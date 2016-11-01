@@ -14,13 +14,13 @@ class NuevoLogo extends React.Component {
       open: !this.state.open
     });
     let classes = document.querySelector(".nuevo-sidebar").classList;
-    // let bodyClassList = document.querySelector("body").classList;
+    let bodyClassList = document.querySelector("body").classList;
     if(this.state.open){
       classes.add("collapsed");
-      // bodyClassList.add("body__without-menu");
+      bodyClassList.add("body__without-menu");
     } else {
       classes.remove("collapsed");
-      // bodyClassList.remove("body__without-menu");
+      bodyClassList.remove("body__without-menu");
     }
   }
   render() {

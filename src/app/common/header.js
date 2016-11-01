@@ -1,6 +1,6 @@
 import React from 'react';
 import NuevoLogo from './header-logo';
-import NuevoSiteSelector from './site-selector';
+// import NuevoSiteSelector from './site-selector';
 import NuevoHeaderMenu from  './header-menu';
 import NuevoSecondaryNav from  './secondary-nav';
 
@@ -15,7 +15,7 @@ class NuevoHeader extends React.Component {
         <nav className="nuevo-primary-nav">
           <div className="nuevo-primary-nav-inner clearfix">
             <NuevoLogo toggleSidebar = {this.props.isSidebarOpen}/>
-            <NuevoSiteSelector />
+          
             <NuevoHeaderMenu />
           </div>
         </nav>

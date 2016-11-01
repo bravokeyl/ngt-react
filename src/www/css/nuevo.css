@@ -46,6 +46,11 @@ img {
   position: relative;
   clear: both;
   overflow: hidden;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.body__without-menu .nuevo-body {
+  padding-left: 0px;
 }
 .nuevo-nav {
   text-align: center;

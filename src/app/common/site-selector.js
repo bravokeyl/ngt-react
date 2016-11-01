@@ -26,7 +26,7 @@ class NuevoSiteSelector extends React.Component {
 
 
   fetchClients(){
-    let url = "http://nuevosol.solar:5007/clients.json";
+    let url = "/clients.json";
     return axios.get(url)
       .then((res) => {
         this.setState({ clients: res.data, sites: JSON.parse(localStorage.getItem('sites')) });
