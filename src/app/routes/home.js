@@ -11,19 +11,25 @@ class NuevoHome extends Component {
   constructor(props){
     super(props);
     this.state = {
-      cards: [],
+      cards: JSON.parse(localStorage.getItem("clients")) || [],
       isSidebarOpen : true
     };
     this.toggleSidebar = this.toggleSidebar.bind(this);
   }
   componentDidMount() {
-    this.fetchClients();
+    console.log(!this.state.clients,this.state.cards.length);
+    if(!this.state.cards.length) {
+      this.fetchClients();
+    }
   }
   fetchClients(){
+    console.log("Fetching clients...");
     let url = "/clients.json";
     return axios.get(url)
       .then(({data}) => {
         this.setState({cards: data});
+        localStorage.setItem("clients",JSON.stringify(data));
+        console.log("Fetching clients Done");
       });
   }
   toggleSidebar(v) {
