@@ -38,7 +38,7 @@ class NuevoTrackerDetail extends Component {
     });
     return (
       <div>
-        <NuevoHeader isSuperAdmin isSidebarOpen={this.state.isSidebarOpen} />
+        <NuevoHeader isSuperAdmin noSecondaryNav isSidebarOpen={this.state.isSidebarOpen} />
         <NuevoSidebar />
         <div id="nuevo-body" className="nuevo-body">
             <div className="content">

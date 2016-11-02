@@ -29,7 +29,7 @@ class NuevoHeaderMenu extends React.Component {
         </li>
         <li className={"header__menu-item header__menu-item--profile"+(this.state.open ? " open" : "")} onClick={this.profileHandleClick}>
           <a href="javascript:;" className="dropdown-toggle dropdown-toggle--profile">
-            <img width="30" height="30" src="images/avatar.jpg" alt="Photo" />
+            <img width="30" height="30" src="/images/avatar.jpg" alt="Photo" />
           </a>
           <ul className="dropdown-menu header-nav__navigation-dropdown">
             <li>

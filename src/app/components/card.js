@@ -7,7 +7,7 @@ class NuevoCard extends React.Component {
     super(props);
   }
   render(){
-    let tid = ("t/"+this.props.tracker.id).trim();
+    let tid = ("/t/"+this.props.tracker.id).trim();
     return (
       <div className="col-md-3 col-sm-4 col-sm-6 col-xs-12">
         <div className="tracker-item">
