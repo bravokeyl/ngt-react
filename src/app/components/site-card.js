@@ -13,9 +13,9 @@ class NuevoSiteCard extends React.Component {
         <div className="tracker-item">
           <div className="card">
             {this.props.noImage ? "":(<div className="tr-container">
-              <a>
+              <Link to={{pathname: sid, query: { b: 'all' }}}>
                 <img className="img-responsive" src={this.props.site.src} />
-              </a>
+              </Link>
             </div>)}
             <div className="card-footer-wrapper">
               <Link to={{pathname: sid, query: { b: 'all' }}}>

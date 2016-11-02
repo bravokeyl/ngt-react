@@ -13,9 +13,9 @@ class NuevoClientCard extends React.Component {
         <div className="tracker-item">
           <div className="card">
             {this.props.noImage ? "":(<div className="tr-container">
-              <a>
+              <Link to={cid}>
                 <img className="img-responsive" src={this.props.client.src} />
-              </a>
+              </Link>
             </div>)}
             <div className="card-footer-wrapper">
               <Link to={cid}>

@@ -70,8 +70,9 @@ class NuevoDashboard extends Component {
   render() {
     let cards = [];
     let cardsI = [];
+
     this.cards.map((i,k)=>{
-      cards.push(<NuevoCard key={k} name={i.name} imageSrc={i.src}  noImage id={i.id} status={i.status}/>);
+      cards.push(<NuevoCard key={k} tracker={i} />);
     });
     let selectedBlock = "n";
     selectedBlock = this.props.location.search.split("=");
@@ -88,7 +89,6 @@ class NuevoDashboard extends Component {
             </div>
         </div>
       </div>
-
     );
   }
 }
